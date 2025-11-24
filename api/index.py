@@ -1,14 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from mangum import Mangum
-import sys
-import os
-
-# Add parent directory to path to import backend modules
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'backend'))
-
-from models import SentimentRequest, SentimentResponse
-from sentiment_service import SentimentService
+from .models import SentimentRequest, SentimentResponse
+from .sentiment_service import SentimentService
 
 app = FastAPI()
 

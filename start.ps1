@@ -4,12 +4,12 @@ Write-Host "Starting Hiver Sentiment Analysis Application..." -ForegroundColor G
 
 # Install backend dependencies
 Write-Host "`nInstalling backend dependencies..." -ForegroundColor Yellow
-Set-Location "$PSScriptRoot\backend"
+Set-Location "$PSScriptRoot\api"
 pip install -r requirements.txt
 
 # Start backend in a new window
 Write-Host "`nStarting backend server..." -ForegroundColor Yellow
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$PSScriptRoot\backend'; Write-Host 'Backend running on http://localhost:8000' -ForegroundColor Green; uvicorn main:app --reload"
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$PSScriptRoot\api'; Write-Host 'Backend running on http://localhost:8000' -ForegroundColor Green; uvicorn index:app --reload"
 
 # Install frontend dependencies
 Write-Host "`nInstalling frontend dependencies..." -ForegroundColor Yellow
