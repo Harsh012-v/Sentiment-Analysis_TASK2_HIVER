@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from mangum import Mangum
-from .models import SentimentRequest, SentimentResponse
-from .sentiment_service import SentimentService
+from models import SentimentRequest, SentimentResponse
+from sentiment_service import SentimentService
 
 app = FastAPI()
 
