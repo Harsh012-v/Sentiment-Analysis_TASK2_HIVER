@@ -3,3 +3,4 @@ mangum
 pydantic
 uvicorn
 python-multipart
+typing-extensions
